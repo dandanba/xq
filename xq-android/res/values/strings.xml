@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">相亲佳缘</string>
+	<string name="tab_text_1">缘分</string>
+	<string name="tab_text_2">搜索</string>
+	<string name="tab_text_3">信箱</string>
+	<string name="tab_text_4">附近</string>
+	<string name="tab_text_5">我</string>
+</resources>
