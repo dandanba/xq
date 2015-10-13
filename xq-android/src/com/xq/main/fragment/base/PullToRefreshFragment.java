@@ -42,18 +42,24 @@ public abstract class PullToRefreshFragment<D extends BaseDataHolder, V extends 
 	 * @param data
 	 */
 	public abstract void handleView(ViewGroup parent, View convertView, V viewHolder, int position, D data);
-
+	private final Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case 1:
+				mPullRefreshView.onRefreshComplete();
+				break;
+			default:
+				break;
+			}
+		};
+	};
 	public int mViewTypeCount = 1;
 	public Mode mPullResfreshMode = Mode.DISABLED;
 	public PullToRefreshAdapterViewBase<P> mPullRefreshView;
 	public SimpleArrayAdapter<D> mAdapter;
 	public ArrayList<D> mDatas;
 	public boolean mPullDownOrUp = true;
-	private final Handler mRefreshHandler = new Handler() {
-		public void handleMessage(Message msg) {
-			mPullRefreshView.onRefreshComplete();
-		};
-	};
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -132,7 +138,7 @@ public abstract class PullToRefreshFragment<D extends BaseDataHolder, V extends 
 	}
 
 	public void refreshComplete() {
-		mRefreshHandler.sendEmptyMessageDelayed(1, 500);
+		mHandler.sendEmptyMessageDelayed(1, 500);
 	}
 
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
