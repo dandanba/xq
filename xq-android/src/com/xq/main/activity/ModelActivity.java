@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.xq.main.activity.base.BaseActivity;
 
-public class XQActivity extends BaseActivity {
+public class ModelActivity extends BaseActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

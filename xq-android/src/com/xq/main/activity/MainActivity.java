@@ -25,7 +25,7 @@ import com.xq.main.fragment.SearchFragment;
  * @author wanggeng
  * 
  */
-public class MainActivity extends XQActivity implements OnClickListener {
+public class MainActivity extends ModelActivity implements OnClickListener {
 	private final List<Fragment> mFragments = new ArrayList<Fragment>();
 	private int mClickedTabId = R.id.tab_1;
 	private FragmentSwitcher mFragmentSwitcher;
