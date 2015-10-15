@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 import com.xq.main.R;
 import com.xq.main.fragment.HomeFragment;
@@ -28,8 +30,20 @@ import com.xq.main.fragment.SearchFragment;
 public class MainActivity extends ModelActivity implements OnClickListener {
 	private final List<Fragment> mFragments = new ArrayList<Fragment>();
 	private int mClickedTabId = R.id.tab_1;
-	private FragmentSwitcher mFragmentSwitcher;
 	private FragmentStateArrayPagerAdapter mFragmentAdapter;
+	// ------ bind ------
+	@Bind(R.id.content_layout)
+	FragmentSwitcher mFragmentSwitcher;
+	@Bind(R.id.tab_1)
+	TextView mTabButton1;
+	@Bind(R.id.tab_2)
+	TextView mTabButton2;
+	@Bind(R.id.tab_3)
+	TextView mTabButton3;
+	@Bind(R.id.tab_4)
+	TextView mTabButton4;
+	@Bind(R.id.tab_5)
+	TextView mTabButton5;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -48,18 +62,16 @@ public class MainActivity extends ModelActivity implements OnClickListener {
 	}
 
 	public void initView() {
-		mFragmentSwitcher = (FragmentSwitcher) findViewById(R.id.content_layout);
 		mFragmentAdapter = new FragmentStateArrayPagerAdapter(getSupportFragmentManager());
 		mFragmentSwitcher.setAdapter(mFragmentAdapter);
 		mFragmentAdapter.addAll(mFragments);
-		final TextView button = (TextView) findViewById(R.id.tab_1);
-		button.setOnClickListener(this);
-		button.setTextColor(Color.parseColor("#F56034"));
-		button.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.tab_icon_1_foucsed, 0, 0);
-		findViewById(R.id.tab_2).setOnClickListener(this);
-		findViewById(R.id.tab_3).setOnClickListener(this);
-		findViewById(R.id.tab_4).setOnClickListener(this);
-		findViewById(R.id.tab_5).setOnClickListener(this);
+		mTabButton1.setOnClickListener(this);
+		mTabButton1.setTextColor(Color.parseColor("#F56034"));
+		mTabButton1.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.tab_icon_1_foucsed, 0, 0);
+		mTabButton2.setOnClickListener(this);
+		mTabButton3.setOnClickListener(this);
+		mTabButton4.setOnClickListener(this);
+		mTabButton5.setOnClickListener(this);
 	}
 
 	@Override

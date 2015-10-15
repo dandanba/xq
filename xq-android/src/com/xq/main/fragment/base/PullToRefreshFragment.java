@@ -13,6 +13,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import butterknife.Bind;
 
 import com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -42,6 +43,7 @@ public abstract class PullToRefreshFragment<D extends BaseDataHolder, V extends 
 	 * @param data
 	 */
 	public abstract void handleView(ViewGroup parent, View convertView, V viewHolder, int position, D data);
+
 	private final Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -56,10 +58,11 @@ public abstract class PullToRefreshFragment<D extends BaseDataHolder, V extends 
 	};
 	public int mViewTypeCount = 1;
 	public Mode mPullResfreshMode = Mode.DISABLED;
-	public PullToRefreshAdapterViewBase<P> mPullRefreshView;
 	public SimpleArrayAdapter<D> mAdapter;
 	public ArrayList<D> mDatas;
 	public boolean mPullDownOrUp = true;
+	@Bind(R.id.pull_refresh_view)
+	public PullToRefreshAdapterViewBase<P> mPullRefreshView;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -110,7 +113,6 @@ public abstract class PullToRefreshFragment<D extends BaseDataHolder, V extends 
 	}
 
 	private void initPullToRefresh(View view) {
-		mPullRefreshView = (PullToRefreshAdapterViewBase<P>) view.findViewById(R.id.pull_refresh_view);
 		mPullRefreshView.setMode(mPullResfreshMode);
 		mPullRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<P>() {
 			@Override

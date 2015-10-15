@@ -5,5 +5,20 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/android-async-http-1.4.9.jar"/>
+	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="libs/avoscloud-push-v3.8.1.jar"/>
+	<classpathentry kind="lib" path="libs/avoscloud-sdk-v3.8.1.jar"/>
+	<classpathentry kind="lib" path="libs/butterknife-7.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/eventbus-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/fastjson.jar"/>
+	<classpathentry kind="lib" path="libs/httpmime-4.2.4.jar"/>
+	<classpathentry kind="lib" path="libs/Java-WebSocket-1.2.0-leancloud.jar"/>
+	<classpathentry kind="lib" path="libs/umeng-analytics-v5.6.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
