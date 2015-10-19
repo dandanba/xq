@@ -18,7 +18,6 @@ public class SimpleArrayAdapter<T> extends BaseAdapter implements Filterable {
 	private int mResource;
 	private final Object mLock = new Object();
 	private boolean mNotifyOnChange = true;
-	private Context mContext;
 	private ArrayList<T> mOriginalValues;
 	private ArrayFilter mFilter;
 	private LayoutInflater mInflater;
@@ -125,7 +124,6 @@ public class SimpleArrayAdapter<T> extends BaseAdapter implements Filterable {
 	}
 
 	private void init(Context context, int resource, List<T> objects) {
-		mContext = context;
 		mResource = resource;
 		mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mObjects = objects;

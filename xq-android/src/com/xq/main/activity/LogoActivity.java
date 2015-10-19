@@ -12,7 +12,7 @@ public class LogoActivity extends BaseActivity {
 		public void handleMessage(android.os.Message msg) {
 			removeMessages(msg.what);
 			finish();
-			startActivity(new Intent(LogoActivity.this, MainActivity.class));
+			startActivity(new Intent(LogoActivity.this, GuideActivity.class));
 		};
 	};
 
