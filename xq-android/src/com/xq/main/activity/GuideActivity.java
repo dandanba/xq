@@ -1,5 +1,6 @@
 package com.xq.main.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +11,15 @@ import butterknife.OnClick;
 
 import com.xq.main.R;
 import com.xq.main.activity.base.BaseActivity;
+import com.xq.main.util.PreferencesUtils;
 import com.xq.main.widget.MyViewPager;
 import com.xq.main.widget.MyViewPagerAdapter;
 
 public class GuideActivity extends BaseActivity {
+	public static boolean hasGuide(Context context) {
+		return PreferencesUtils.getBoolean(context, "has_guide");
+	}
+
 	@Bind(R.id.pager)
 	public MyViewPager mViewPager;
 	public ImagePagerAdapter mImageAdapter;
@@ -23,11 +29,7 @@ public class GuideActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guide);
-		initView();
-	}
-
-	public void initView() {
-		mViewPager = (MyViewPager) findViewById(R.id.pager);
+		PreferencesUtils.putBoolean(this, "has_guide", true);
 		mImageAdapter = new ImagePagerAdapter(mImages);
 		mViewPager.setAdapter(mImageAdapter);
 	}
@@ -40,7 +42,8 @@ public class GuideActivity extends BaseActivity {
 
 		@OnClick(R.id.start_button)
 		void onStartButtonClick(View v) {
-			startActivity(new Intent(GuideActivity.this, MainActivity.class));
+			startActivity(new Intent(GuideActivity.this, SelectActivity.class));
+			finish();
 		}
 
 		public ImagePagerAdapter(int[] images) {

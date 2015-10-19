@@ -6,13 +6,19 @@ import android.os.Handler;
 
 import com.xq.main.R;
 import com.xq.main.activity.base.BaseActivity;
+import com.xq.main.util.PreferencesUtils;
 
 public class LogoActivity extends BaseActivity {
 	private final Handler mHandler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			removeMessages(msg.what);
+			final boolean hasGuide = GuideActivity.hasGuide(LogoActivity.this);
+			if (hasGuide) {
+				startActivity(new Intent(LogoActivity.this, SelectActivity.class));
+			} else {
+				startActivity(new Intent(LogoActivity.this, GuideActivity.class));
+			}
 			finish();
-			startActivity(new Intent(LogoActivity.this, GuideActivity.class));
 		};
 	};
 
