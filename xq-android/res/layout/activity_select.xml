@@ -8,6 +8,17 @@
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:orientation="vertical" >
+		<TextView
+			android:id="@+id/login_button"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:drawablePadding="4dp"
+			android:drawableRight="@drawable/arrow_next"
+			android:gravity="right|center_vertical"
+			android:padding="10dp"
+			android:text="@string/login_tip"
+			android:textColor="#c86c57"
+			android:textSize="17sp" />
 		<ImageView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"

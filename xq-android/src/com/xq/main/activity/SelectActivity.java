@@ -3,6 +3,7 @@ package com.xq.main.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,9 @@ import butterknife.OnClick;
 import com.wangjie.wheelview.WheelView;
 import com.xq.main.R;
 import com.xq.main.activity.base.BaseActivity;
+import com.xq.main.app.Messager;
+import com.xq.main.app.XQApplication;
+import com.xq.main.event.ActionEvent;
 
 public class SelectActivity extends BaseActivity {
 	@Bind(R.id.wheel)
@@ -58,5 +62,21 @@ public class SelectActivity extends BaseActivity {
 
 	@OnClick(R.id.next_button)
 	public void nextClick(View view) {
+		final Messager messager = XQApplication.getInstance().getMessager();
+		messager.put("age", mAge);
+		messager.put("sex", mSex);
+		startActivity(new Intent(this, RegisterActivity.class));
+	}
+
+	@OnClick(R.id.login_button)
+	public void loginClick(View view) {
+		startActivity(new Intent(this, LoginActivity.class));
+	}
+
+	@Override
+	public void onEvent(ActionEvent event) {
+		if (event.mAction.equals("account")) {
+			finish();
+		}
 	}
 }
