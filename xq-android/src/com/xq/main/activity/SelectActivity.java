@@ -24,6 +24,7 @@ public class SelectActivity extends BaseActivity {
 	public ImageView mManButton;
 	@Bind(R.id.woman)
 	public ImageView mWomanButton;
+	private final static int sOffet = 1;
 	private final List<String> mAges = new ArrayList<>();
 	private int mAge = 15;
 	private int mSex = 0;
@@ -32,7 +33,7 @@ public class SelectActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select);
-		mAgeWheel.setOffset(1);
+		mAgeWheel.setOffset(sOffet);
 		for (int i = 0; i < 30; i++) {
 			mAges.add(String.format("%1$d岁", 15 + i));
 		}
@@ -40,7 +41,7 @@ public class SelectActivity extends BaseActivity {
 		mAgeWheel.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
 			@Override
 			public void onSelected(int selectedIndex, String item) {
-				mAge = selectedIndex + 15;
+				mAge = selectedIndex - sOffet + 15;
 			}
 		});
 		manClick(null);
