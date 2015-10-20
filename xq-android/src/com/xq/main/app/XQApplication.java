@@ -3,8 +3,6 @@ package com.xq.main.app;
 import android.app.Application;
 import android.util.Log;
 
-import com.loopj.android.http.AsyncHttpClient;
-
 /**
  * 
  * @author wanggeng
