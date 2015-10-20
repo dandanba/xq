@@ -12,7 +12,7 @@ import com.xq.main.activity.base.BaseActivity;
 import de.greenrobot.event.EventBus;
 
 public class BaseFragment extends Fragment {
-	private BaseActivity mBaseActivity;
+	public BaseActivity mBaseActivity;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

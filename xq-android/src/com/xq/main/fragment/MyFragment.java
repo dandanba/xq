@@ -6,14 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
+import butterknife.Bind;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.xq.main.R;
-import com.xq.main.dataholder.UserDataHolder;
-import com.xq.main.fragment.base.PullToRefreshFragment;
-import com.xq.main.viewholder.UserViewHolder;
+import com.xq.main.fragment.base.BaseFragment;
+import com.xq.main.model.User;
 
 /**
  * 我
@@ -21,7 +20,7 @@ import com.xq.main.viewholder.UserViewHolder;
  * @author wanggeng
  * 
  */
-public class MyFragment extends PullToRefreshFragment<UserDataHolder, UserViewHolder, ListView> implements OnClickListener {
+public class MyFragment extends BaseFragment implements OnClickListener {
 	public static MyFragment newInstance() {
 		MyFragment fragment = new MyFragment();
 		Bundle args = new Bundle();
@@ -29,17 +28,22 @@ public class MyFragment extends PullToRefreshFragment<UserDataHolder, UserViewHo
 		return fragment;
 	}
 
+	@Bind(R.id.icon)
+	public ImageView mIcon;
+	@Bind(R.id.title)
+	public TextView mTitleText;
+	@Bind(R.id.text)
+	public TextView mTextText;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		mPullResfreshMode = Mode.DISABLED;
-		return inflater.inflate(R.layout.fragment_ptr_grid, container, false);
+		return inflater.inflate(R.layout.fragment_my, container, false);
 	}
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		initView(view);
-		update();
 	}
 
 	@Override
@@ -50,27 +54,17 @@ public class MyFragment extends PullToRefreshFragment<UserDataHolder, UserViewHo
 	@Override
 	public void initView(View view) {
 		super.initView(view);
-	}
-
-	@Override
-	public void update() {
+		final User user = User.getUser(mBaseActivity);
+		update(user);
 	}
 
 	@Override
 	public void onClick(View v) {
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		final UserDataHolder dataHolder = mDatas.get(position);
-	}
-
-	@Override
-	public UserViewHolder createViewHolder(View convertView, ViewGroup parent, int position, UserDataHolder data) {
-		return null;
-	}
-
-	@Override
-	public void handleView(ViewGroup parent, View convertView, UserViewHolder viewHolder, int position, UserDataHolder data) {
+	private void update(User user) {
+		mIcon.setImageResource(user.getSex() == 0 ? R.drawable.man_user_icon_default : R.drawable.woman_user_icon_default);
+		mTitleText.setText(user.getUsername());
+		mTextText.setText(user.getAgeText());
 	}
 }

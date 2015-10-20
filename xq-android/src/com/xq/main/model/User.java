@@ -36,4 +36,8 @@ public class User extends AVUser {
 	public void setSex(int sex) {
 		put("sex", sex);
 	}
+
+	public String getAgeText() {
+		return String.format("%1$d岁", getAge());
+	}
 }
