@@ -1,14 +1,19 @@
 package com.xq.main.fragment.base;
 
-import butterknife.ButterKnife;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import butterknife.ButterKnife;
+
+import com.xq.main.activity.base.BaseActivity;
+
 import de.greenrobot.event.EventBus;
 
 public class BaseFragment extends Fragment {
+	private BaseActivity mBaseActivity;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,6 +47,7 @@ public class BaseFragment extends Fragment {
 	}
 
 	public void initData(Activity activity) {
+		mBaseActivity = (BaseActivity) activity;
 	}
 
 	public void initView(View view) {

@@ -12,14 +12,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 import com.xq.main.R;
+import com.xq.main.activity.base.BaseActivity;
 import com.xq.main.fragment.HomeFragment;
 import com.xq.main.fragment.MessageFragment;
 import com.xq.main.fragment.MyFragment;
 import com.xq.main.fragment.NearFragment;
 import com.xq.main.fragment.SearchFragment;
+import com.xq.main.model.User;
 
 /**
  * 主界面
@@ -27,7 +28,7 @@ import com.xq.main.fragment.SearchFragment;
  * @author wanggeng
  * 
  */
-public class MainActivity extends ModelActivity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener {
 	private final List<Fragment> mFragments = new ArrayList<Fragment>();
 	private int mClickedTabId = R.id.tab_1;
 	private FragmentStateArrayPagerAdapter mFragmentAdapter;

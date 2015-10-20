@@ -6,6 +6,7 @@ import android.os.Handler;
 
 import com.xq.main.R;
 import com.xq.main.activity.base.BaseActivity;
+import com.xq.main.model.User;
 import com.xq.main.util.PreferencesUtils;
 
 public class LogoActivity extends BaseActivity {
@@ -14,7 +15,12 @@ public class LogoActivity extends BaseActivity {
 			removeMessages(msg.what);
 			final boolean hasGuide = GuideActivity.hasGuide(LogoActivity.this);
 			if (hasGuide) {
-				startActivity(new Intent(LogoActivity.this, SelectActivity.class));
+				User user = User.getUser(LogoActivity.this);
+				if (user == null) {
+					startActivity(new Intent(LogoActivity.this, SelectActivity.class));
+				} else {
+					startActivity(new Intent(LogoActivity.this, MainActivity.class));
+				}
 			} else {
 				startActivity(new Intent(LogoActivity.this, GuideActivity.class));
 			}

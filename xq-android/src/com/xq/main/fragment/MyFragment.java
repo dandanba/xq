@@ -7,12 +7,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.xq.main.R;
-import com.xq.main.activity.ModelActivity;
 import com.xq.main.dataholder.UserDataHolder;
 import com.xq.main.fragment.base.PullToRefreshFragment;
 import com.xq.main.viewholder.UserViewHolder;
@@ -31,8 +29,6 @@ public class MyFragment extends PullToRefreshFragment<UserDataHolder, UserViewHo
 		return fragment;
 	}
 
-	private ModelActivity mModelActivity;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		mPullResfreshMode = Mode.DISABLED;
@@ -49,7 +45,6 @@ public class MyFragment extends PullToRefreshFragment<UserDataHolder, UserViewHo
 	@Override
 	public void initData(Activity activity) {
 		super.initData(activity);
-		mModelActivity = (ModelActivity) activity;
 	}
 
 	@Override

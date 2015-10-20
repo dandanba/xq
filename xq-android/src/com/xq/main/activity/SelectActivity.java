@@ -65,7 +65,7 @@ public class SelectActivity extends BaseActivity {
 		final Messager messager = XQApplication.getInstance().getMessager();
 		messager.put("age", mAge);
 		messager.put("sex", mSex);
-		startActivity(new Intent(this, RegisterActivity.class));
+		startActivity(new Intent(this, CodeActivity.class));
 	}
 
 	@OnClick(R.id.login_button)
