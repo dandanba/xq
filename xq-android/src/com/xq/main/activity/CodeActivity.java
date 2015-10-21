@@ -19,6 +19,7 @@ import com.avos.avoscloud.AVOSCloud;
 import com.xq.main.R;
 import com.xq.main.activity.base.BaseActivity;
 import com.xq.main.app.XQApplication;
+import com.xq.main.event.ActionEvent;
 import com.xq.main.util.ToastUtils;
 
 public class CodeActivity extends BaseActivity implements Handler.Callback {
@@ -120,6 +121,13 @@ public class CodeActivity extends BaseActivity implements Handler.Callback {
 			});
 		} else {// 使用ShareSDK的短信验证服务
 			SMSSDK.submitVerificationCode("86", phoneNumber, code);
+		}
+	}
+
+	@Override
+	public void onEvent(ActionEvent event) {
+		if (event.mAction.equals("account")) {
+			finish();
 		}
 	}
 

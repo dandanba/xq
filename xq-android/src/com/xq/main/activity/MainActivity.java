@@ -20,7 +20,6 @@ import com.xq.main.fragment.MessageFragment;
 import com.xq.main.fragment.MyFragment;
 import com.xq.main.fragment.NearFragment;
 import com.xq.main.fragment.SearchFragment;
-import com.xq.main.model.User;
 
 /**
  * 主界面

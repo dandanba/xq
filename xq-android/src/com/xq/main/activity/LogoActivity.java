@@ -7,7 +7,6 @@ import android.os.Handler;
 import com.xq.main.R;
 import com.xq.main.activity.base.BaseActivity;
 import com.xq.main.model.User;
-import com.xq.main.util.PreferencesUtils;
 
 public class LogoActivity extends BaseActivity {
 	private final Handler mHandler = new Handler() {

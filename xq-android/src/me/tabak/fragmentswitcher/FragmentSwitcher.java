@@ -16,21 +16,9 @@
 package me.tabak.fragmentswitcher;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.database.DataSetObserver;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.support.v4.app.Fragment;
-import android.support.v4.os.ParcelableCompat;
-import android.support.v4.os.ParcelableCompatCreatorCallbacks;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 /**
  * A fragment switcher similar to a {@link android.support.v4.view.ViewPager} that cannot be swiped and does not keep offscreen fragments like a ViewPager.

@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.xq.main.R;
-import com.xq.main.activity.base.BaseActivity;
 import com.xq.main.dataholder.UserDataHolder;
 import com.xq.main.fragment.base.PullToRefreshFragment;
 import com.xq.main.viewholder.UserViewHolder;

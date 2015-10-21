@@ -15,12 +15,13 @@
  */
 package me.tabak.fragmentswitcher;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 /**
  * A {@link android.support.v4.app.FragmentStatePagerAdapter} that does not need to be subclassed and can be filled like an array.

@@ -2,6 +2,7 @@ package com.xq.main.widget;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
