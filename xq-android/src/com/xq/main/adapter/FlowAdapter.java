@@ -25,14 +25,6 @@ public class FlowAdapter extends RecyclerView.Adapter<ImageViewHolder> {
 		mContext = context;
 		mInflater = LayoutInflater.from(context);
 		mDatas = new ArrayList<ImageDataHolder>();
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
-		mDatas.add(new ImageDataHolder("file:///storage/emulated/0/Pictures/Screenshots/Screenshot_2015-10-17-19-18-29-44.png"));
 	}
 
 	@Override
@@ -49,9 +41,10 @@ public class FlowAdapter extends RecyclerView.Adapter<ImageViewHolder> {
 	@Override
 	public ImageViewHolder onCreateViewHolder(ViewGroup parent, int postion) {
 		View view = mInflater.inflate(R.layout.viewholder_image, null);
-		final int width = DisplayUtils.dpToPxInt(mContext, 75);
+		final int width = DisplayUtils.dpToPxInt(mContext, 90);
 		final int height = DisplayUtils.dpToPxInt(mContext, 80);
-		view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
+		final RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(width, height);
+		view.setLayoutParams(lp);
 		final ImageViewHolder viewHolder = new ImageViewHolder(view);
 		ButterKnife.bind(viewHolder, view);
 		return viewHolder;

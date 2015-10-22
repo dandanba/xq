@@ -15,14 +15,13 @@
 		android:padding="10dp" >
 		<ImageView
 			android:id="@+id/icon_button"
-			android:layout_width="70dp"
-			android:layout_height="70dp"
-			android:layout_marginRight="10dp"
+			android:layout_width="80dp"
+			android:layout_height="80dp"
 			android:src="@drawable/upload_photo_button" />
 		<android.support.v7.widget.RecyclerView
 			android:id="@+id/flow_layout"
 			android:layout_width="0dp"
-			android:layout_height="70dp"
+			android:layout_height="80dp"
 			android:layout_centerVertical="true"
 			android:layout_weight="1"
 			android:scrollbars="none" />
